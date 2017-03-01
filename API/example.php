@@ -7,59 +7,69 @@
  * v2.0.1
  */
 include 'rongcloud.php';
-$appKey = 'appKey';
-$appSecret = 'appSecret';
+$appKey = 'tdrvipkstfw55';
+$appSecret = 'QMuqwx985vUYh';
 $jsonPath = "jsonsource/";
 $RongCloud = new RongCloud($appKey,$appSecret);
 
 
 	echo ("\n***************** user **************\n");
+	echo "</br>";
 	// 获取 Token 方法
 	$result = $RongCloud->user()->getToken('userId1', 'username', 'http://www.rongcloud.cn/images/logo.png');
 	echo "getToken    ";
 	print_r($result);
+
+    echo "</br>";
 	echo "\n";
 	
 	// 刷新用户信息方法
 	$result = $RongCloud->user()->refresh('userId1', 'username', 'http://www.rongcloud.cn/images/logo.png');
 	echo "refresh    ";
 	print_r($result);
+	echo "</br>";
 	echo "\n";
 	
 	// 检查用户在线状态 方法
 	$result = $RongCloud->user()->checkOnline('userId1');
 	echo "checkOnline    ";
 	print_r($result);
+	echo "</br>";
 	echo "\n";
 	
 	// 封禁用户方法（每秒钟限 100 次）
 	$result = $RongCloud->user()->block('userId4', '10');
 	echo "block    ";
 	print_r($result);
+	echo "</br>";
 	echo "\n";
 	
 	// 解除用户封禁方法（每秒钟限 100 次）
 	$result = $RongCloud->user()->unBlock('userId2');
 	echo "unBlock    ";
 	print_r($result);
+	echo "</br>";
 	echo "\n";
 	
 	// 获取被封禁用户方法（每秒钟限 100 次）
 	$result = $RongCloud->user()->queryBlock();
 	echo "queryBlock    ";
 	print_r($result);
+	echo "</br>";
 	echo "\n";
 	
 	// 添加用户到黑名单方法（每秒钟限 100 次）
 	$result = $RongCloud->user()->addBlacklist('userId1', 'userId2');
 	echo "addBlacklist    ";
 	print_r($result);
+	echo "</br>";
 	echo "\n";
 	
 	// 获取某用户的黑名单列表方法（每秒钟限 100 次）
 	$result = $RongCloud->user()->queryBlacklist('userId1');
 	echo "queryBlacklist    ";
 	print_r($result);
+	echo "</br>";
 	echo "\n";
 	
 	// 从黑名单中移除用户方法（每秒钟限 100 次）
